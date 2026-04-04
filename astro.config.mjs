@@ -33,13 +33,35 @@ export default defineConfig({
 
       head: [
         {
+          //content square script
           tag: "script",
           attrs: {
             src: "https://t.contentsquare.net/uxa/f346da80e5d0c.js",
             defer: true,
           },
         },
+
+        //google analytics script
+          {
+          tag: "script",
+          attrs: 
+          {
+            src: "https://www.googletagmanager.com/gtag/js?id=G-XVQYRXJTY8",
+            async: true,
+          },
+          },
+          {
+            tag: "script",
+            content: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-XVQYRXJTY8');
+            `,
+          },
       ],
+
+
       // @ts-ignore
       social: social.main || [],
       locales,
