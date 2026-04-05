@@ -5,6 +5,7 @@ import CTA from "../CTA.astro";
 import SidebarNav from "../SidebarNav.astro";
 import ImageMod from "../ImageMod.astro";
 import SpeedInsights from "@vercel/speed-insights/astro";
+import Analytics from '@vercel/analytics/astro'
 
 const { hasSidebar } = Astro.locals.starlightRoute;
 ---
@@ -74,6 +75,7 @@ const { hasSidebar } = Astro.locals.starlightRoute;
   {!hasSidebar && <CTA />}
   {!hasSidebar && <Footer />}
 
+  <Analytics />
   <SpeedInsights />
 </div>
 
